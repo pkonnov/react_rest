@@ -65,4 +65,4 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-node_modules/
+node_modules/*
