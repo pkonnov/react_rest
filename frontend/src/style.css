@@ -111,3 +111,6 @@ header {
   outline: none;
   cursor: pointer;
 }
+li.nav-item.active a {
+    color: #28ae72!important;
+}

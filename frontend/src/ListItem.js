@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import classnames from "classnames";
 import "./style.css";
+import TodoList from './TodoList'
 
 class App extends Component {
   constructor(props) {

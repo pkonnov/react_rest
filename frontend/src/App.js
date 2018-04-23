@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import NavBar from './components/NavBar';
 import './style.css';
 
-class App extends Component {
+class TodoList extends Component {
   state = {
     todos: []
   };
@@ -19,16 +20,21 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+    <main>
+
+      <NavBar />
+
+      <div className="container">
         {this.state.todos.map(item => (
-        <div key={item.id}>
+        <div className="items" key={item.id}>
           <h1>{item.title}</h1>
           <span>{item.description}</span>
         </div>
         ))}
       </div>
+    </main>
     );
   }
 }
 
-export default App;
+export default TodoList;
