@@ -7,4 +7,4 @@ Pipfile.lock
 yarn-debug.log*
 npm-debug.log*
 yarn-debug.log*
-frontend/src/static/bootstrap
+./frontend/src/static/bootstrap/*
