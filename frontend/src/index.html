@@ -1,0 +1,70 @@
+{% extends 'bootstrap4.html' %}
+{% load bootstrap4 %}
+{% block bootstrap4_content %}
+<!--
+<div class="container my-5">
+  <div class="row d-flex justify-content-center">
+
+    <h2><a href="sarinform/">Саринформ</a></h2>
+    <h2><a href="sarbc/">Sarbc</a></h2>
+    <h2><a href=""></a></h2>
+    <h2><a href=""></a></h2>
+
+  </div>
+</div> -->
+<div id="avto" class="container mt-5">
+
+
+	<!-- <div class="row mx-auto d-flex justify-content-center sarinform">
+			<h2>Sarinform</h2>
+		    {% for key, value in context.items %}
+		      <a target="_blank" href="//www.sarinform.ru{{ key }}">{{ value }}</a>
+		    {% endfor %}
+	</div> -->
+
+	<div class="row mx-auto d-flex justify-content-center sarinform">
+			<h2>Vzsar</h2>
+		    {% for key, value in context_vz.items %}
+		      <a target="_blank" href="//vzsar.ru{{ value }}">{{ key }}</a>
+		    {% endfor %}
+	</div>
+
+	<div class="row mx-auto d-flex justify-content-center">
+		<h2>Sarbc</h2>
+		{% for key, value in context_sarbc.items %}
+			<a target="_blank" href="{{ key }}">{{ value }}</a>
+		{% endfor %}
+	</div>
+
+	<div class="row mx-auto d-flex justify-content-center">
+			<h2>Saratov24</h2>
+			{% for key, value in context_sar24.items %}
+				<a target="_blank" href="//saratov24.tv{{ value }}">{{ key }}</a>
+			{% endfor %}
+	</div>
+
+
+	<div class="row mx-auto d-flex justify-content-center">
+		<h2>Nversia</h2>
+			{% for key, value in contextNversia.items %}
+				<a target="_blank" href="//nversia.ru{{ key }}">{{ value }}</a>
+			{% endfor %}
+	</div>
+
+	<div class="row mx-auto d-flex justify-content-center">
+		<h2>fn_volga</h2>
+			{% for key, value in context_fn.items %}
+				<a target="_blank" href="//fn-volga.ru{{ value }}">{{ key }}</a>
+			{% endfor %}
+	</div>
+
+
+</div>
+
+
+<div class="container mt-5">
+
+
+</div>
+
+{% endblock %}

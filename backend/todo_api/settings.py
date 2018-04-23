@@ -61,7 +61,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'localhost:3000/',
+    '192.168.1.12:3000/'
 )
 
 ROOT_URLCONF = 'todo_api.urls'
