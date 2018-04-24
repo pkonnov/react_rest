@@ -4,7 +4,8 @@ import './style.css';
 
 class TodoList extends Component {
   state = {
-    todos: []
+    todos: [],
+    rendView: false
   };
 
   async componentDidMount() {
@@ -18,22 +19,60 @@ class TodoList extends Component {
       console.log(e);
     }
   }
-  render() {
+
+  close = () => {
+    this.setState({rendView:false});
+  };
+
+  view = () => {
+    this.setState({rendView:true});
+  };
+
+  rendClose = () => {
     return (
-    <main>
+      <main>
+        
+        <NavBar />
 
-      <NavBar />
-
-      <div className="container">
-        {this.state.todos.map(item => (
-        <div className="items" key={item.id}>
-          <h1>{item.title}</h1>
-          <span>{item.description}</span>
+        <div className="container">
+          {this.state.todos.map(i => (
+          <div className="items" key={i.id}>
+            <h2>{i.title}</h2>
+            <button onClick={this.view} className="btn text-dark m-1">Показать</button>
+            <button onClick={this.close} className="btn text-danger m-1">Скрыть</button>
+          </div>
+          ))}
         </div>
-        ))}
-      </div>
-    </main>
+      </main>
     );
+  }
+
+  rendView = () => {
+    return (
+      <main>
+        <NavBar />
+
+        <div className="container">
+          {this.state.todos.map(i => (
+          <div className="items" key={i.id}>
+            <h2>{i.title}</h2>
+            <span className="text">{i.description}</span>
+            <button onClick={this.view} className="btn text-dark m-1">Показать</button>
+            <button onClick={this.close} className="btn text-danger m-1">Скрыть</button>
+          </div>
+          ))}
+        </div>
+      </main>
+    );
+  }
+
+
+  render() {
+    if (!this.state.rendView) {
+      return this.rendClose();
+    } else {
+      return this.rendView();
+    }
   }
 }
 
