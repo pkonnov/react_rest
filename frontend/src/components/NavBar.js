@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NavItem = props => {
-  const pageURI = window.location.pathname + window.location.search
+  const pageURI = window.location.pathname + window.location.search //путь в адресной строке
   const liClassName = (props.path === pageURI) ? 'nav-item active' : 'nav-item';
   const aClassName = props.disabled ? 'nav-link disabled' : 'nav-link'
   return (
